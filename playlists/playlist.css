@@ -1,0 +1,47 @@
+/* Copyright (C) 2021 Alex C */
+
+html {
+    font-size: 10px;
+}
+
+body { background-color: rgb(16,12,8); display: flex; justify-content: center; opacity: 0; }
+body::-webkit-scrollbar { display: none; }
+
+/* Loader */
+.loader { position: fixed; display: flex; justify-content: center; align-items: center; width: 100%; height: calc(100vh - 2rem); z-index: 10; }
+    .loader div { display: inline-block; width: 2rem; height: 2rem; margin: 0.5rem; border-radius: 50%; animation: loader 2.5s infinite ease-in-out; }
+        .loader div:nth-child(1) { animation-delay: 0.2s; }
+        .loader div:nth-child(2) { animation-delay: 0.4s; }
+        .loader div:nth-child(3) { animation-delay: 0.6s; }
+        .loader div:nth-child(4) { animation-delay: 0.8s; }
+        .loader div:nth-child(5) { animation-delay: 1s; }
+/* Loader /*/
+
+/* Playlist Grid */
+.themes-inner-container { display: flex; justify-content: center; flex-direction: column; margin-bottom: 2rem; }
+    .themes { width: calc(100vw - 4rem); height: 12rem; margin-top: 1rem; }
+    .themes:first-child { margin-top: 3rem; }
+        .song { position: relative; top: 50%; transform: translateY(-50%); border: 0.1rem whitesmoke solid; border-radius: 2rem; color: white; background-color: black; }
+        .theme { width: 21rem; height: 11.5rem; border-radius: 2rem; }
+        .theme:fullscreen { border-radius: 0rem; }
+        .description { position: absolute; top: 30%; margin-left: 3rem; display: inline-block; font-family: 'Roboto', sans-serif; }
+            .description h3 { font-size: 1.5rem; width: fit-content; }
+            .description p { font-size: 0.8rem; width: 40vw; margin-top: 1.5rem }
+
+@media (max-width: 931px) {
+    .description p { display: none; }
+}
+
+@media (max-width: 645px) {
+    .themes { height: 17.5rem;}
+        .song { height: 100%; width: fit-content; text-align: center; }
+            .description { display: block; top: 75%; }
+}
+/* Playlist Grid /*/
+
+/* Animations */
+@keyframes loader { 0%, 100% { background-color: aqua; transform: scale(0.2); } 50% { background-color: darkblue; transform: scale(1); } }
+/* Animations /*/
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
