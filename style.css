@@ -1,0 +1,107 @@
+/* Copyright (C) 2021 Alex C */
+
+html {
+    font-size: 10px;
+}
+
+body { background-color: black; font-family: 'Roboto', sans-serif; }
+::-webkit-scrollbar { display: none; }
+
+/* Navigation */
+.header { height: 8rem; }
+.background-header { position: fixed; background-image: url("images/header/header-img.jpg"); background-position: center; background-repeat: no-repeat; background-size: cover; }
+    header { display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; height: 8rem; animation: header-web-start 7.5s; border-spacing: 0.2rem; position: fixed; top: 0; left: 0; width: 100%; z-index: 1; }
+    header + * { margin-top: 8rem; }
+        .navigation { font-size: 2rem; margin-right: 4rem; height: 2.2rem; position: relative; top: 1rem; border-spacing: 0.2rem; }
+            .navigation button { width: fit-content; height: 3rem; background-color: transparent; font-size: 2rem; padding: 0; }
+            .shortcut { color: white; margin-right: 4rem; text-decoration: none; transition: color 0.5s ease-in-out; }
+            .shortcut:checked { scroll-behavior: smooth; }
+            .shortcut:hover { color: orange; }
+
+@media (min-width: 435px) and (max-width: 555px) {
+    .navigation { margin-right: 0.5rem; }
+        .shortcut:last-child { margin-right: 1rem; }
+}
+@media (max-width: 435px) {
+    .navigation { height: 8rem; margin-right: 1rem; }
+        .shortcut { position: relative; display: block; text-align: end; margin-right: 1rem; opacity: 50%; }
+        .shortcut:hover { opacity: 1; color: white; }
+}
+/* Navigation /*/
+
+
+/* Introduction */
+.intro { background-image: url("images/header/header-img.jpg"); background-position: center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed; }
+    .introduction { height: calc(100vh - 8rem); }
+        .audio-transcription { height: calc(100vh - 8rem); display: flex; justify-content: center; align-items: center;}
+            .dot { background-color: orange; width: 2rem; height: 2rem; display: inline-block; border-radius: 1rem; margin-right: 1rem; margin-left: 1rem; opacity: 0; animation: dots-web-start 2s ease, dissapear 6s }
+        .get-started { text-align: center; position: relative; bottom: 65vh; color: white; animation: get-started-web-start 7s; }
+            .get-started h1 { font-size: 5.6rem; margin-right: 15vw; margin-left: 15vw; margin-bottom: 2rem; }
+            .get-started p { font-size: 2rem; margin-right: 4rem; margin-left: 4rem; }
+            .get-started-button { display: flex; justify-content: center; position: relative; left: 50vw; transform: translate(-50%, -50%); bottom: 23rem; width: 2rem; height: 2rem; background-color: transparent; border: 0; animation: get-started-web-start 7s; transition: bottom 0.3s ease-in-out; }
+            .get-started-button:hover { bottom: 22.5rem; }
+
+@media (max-width: 555px) {
+    .get-started { bottom: 80vh; }
+    .get-started-button { opacity: 0; }
+}
+
+@media (max-width: 320px) {
+    .introduction { height: calc(110vh - 8rem); }
+        .get-started h1 { margin-left: 5vw; margin-right: 5vw; }
+}
+
+/* Introduction /*/
+
+/* Music */
+.music { display: flex; justify-content: center; padding-top: 15rem; min-height: 80vh; height: auto; }
+    .styles { display: flex; justify-content: center; flex-direction: row; flex-wrap: wrap; float: left; }
+        .style { display: flex; justify-content: center; width: 30.7rem; height: 41rem; margin-left: 2rem; margin-right: 2rem; margin-bottom: 4rem; border-radius: 5rem; opacity: 75%; background-color: white; transition: opacity 0.5s }
+        .style:hover { opacity: 1; }
+        .style a { text-decoration: none; color: black; }
+            .movie .banner { background-image: url("images/banners/movie-img.jpg"); }
+            .hip-hop .banner { background-image: url("images/banners/hiphop-img.jpg"); }
+            .games .banner { background-image: url("images/banners/c418-img.jpg"); }
+            .classic .banner { background-image: url("images/banners/classic-img.jpg"); background-size: 150%; }
+
+            .banner { height: 50%; width: 100%; background-position: center; background-repeat: no-repeat; background-size: 100%; border-top-left-radius: 4.8rem; border-top-right-radius: 4.8rem; transition: height 1s; text-decoration: none; }
+            .banner:hover { height: 70%; }
+            .text { position: relative; top: 130%; font-family: 'Kaushan Script', cursive; text-align: center; margin-left: 3rem; margin-right: 3rem; }
+            .text h3 { font-size: 2rem; }
+            .text p { margin-top: 2rem; font-size: 1.3rem }
+/* Music /*/
+
+/* Project */
+.project { height: 100vh; margin-top: 10rem; padding-left: 10rem; padding-right: 10rem; background-image: url("images/img.jpg"); background-position: center; background-repeat: no-repeat; background-size: auto; background-attachment: fixed; }
+    .project { display: flex; align-items: center; flex-direction: column; }
+    .project > .text { top: 50%; left: 45%; transform: translate(-50%, -50%); }
+    .project > .text a { text-decoration: none; color: black; }
+    .project > .text a:hover { text-decoration: underline; }
+
+@media (max-width:700px) {
+    .project { padding-left: 2rem; padding-right: 2rem; height: 110vh; }
+}
+@media (max-width:555px) {
+    .project { padding-right: 0.5rem; padding-left: 0.5rem; height: 130vh;}
+}
+/* Project /*/
+
+/* Footer */
+footer { display: flex; align-items: center; height: 8vh; }
+    .info { position: relative; top: 3rem; left: 5rem; display: flex; align-items: center; height: 100%; width: 100%; }
+        .info * { margin-left: 2rem; font-size: 1.3rem; color: white }
+        .info a { margin-left: 1rem; text-decoration: none; transition: text-decoration, color 0.5s ease-in-out; }
+        .info a:hover { text-decoration: underline; color: orange }
+/* Footer /*/
+
+/*Animations*/
+@keyframes header-web-start { 0% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes dots-web-start { 10% { height: 7rem; } 20% { height: 5rem; } 25% { height: 8rem; } 30% { height: 4rem; } 35% { height: 15rem; } 40% { height: 10rem; } 45% { height: 23rem; } 50% { height: 4rem; } 55% { height: 14rem; } 60% { height: 12rem; } 65% { height: 25rem; } 70% { height: 3rem; } 75% { height: 11rem; } 80% { height: 6rem; } 85% { height: 8rem; } 90% { height: 3rem; } 95% { height: 5rem; } 100% { height: 2rem; } }
+@keyframes get-started-web-start { 0% { bottom: -3rem; opacity: 0; } 70% { bottom: -3rem; opacity: 0;} }
+@keyframes dissapear { 0% { opacity: 1 } 90% { opacity: 1 } 100% { opacity: 0 } }
+/* Animations /*/
+
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
