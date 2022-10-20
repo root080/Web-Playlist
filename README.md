@@ -4,4 +4,4 @@ This project is an example of a simple site built with HTML, CSS and a little bi
 
 # Note
 
-The site is not 100% finished, because of some issues with the dimensions of video content.
+Video content not included due to the copyrights.
